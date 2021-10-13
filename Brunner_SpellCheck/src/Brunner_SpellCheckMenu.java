@@ -84,7 +84,7 @@ public class Brunner_SpellCheckMenu
           String s = contents.GetWord(i);
           if (!dict.IsWordInDict(s))
           {
-            System.out.println("An spelling error exists at " + contents.GetPosition(i) + ".");
+            System.out.println("An spelling error exists at " + contents.GetPosition(i) + ". " + s + ".");
           }
         }
       }
