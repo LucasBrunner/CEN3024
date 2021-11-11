@@ -11,8 +11,11 @@ public class Brunner_WordCounter
 {
   /**
    * Returns a hashtable of the words in the provided file and a count of their occurrences. Returns null if an error occurs.
+   * 
    * @param _filePath
    * @return
+   * 
+   * @author Lucas Brunner
    */
   public static Hashtable<String, Integer> ReadFile(String _filePath)
   {
@@ -27,11 +30,7 @@ public class Brunner_WordCounter
       {
         String s = scanner.nextLine();
         
-        // Convert to lowercase, remove non-letters, and remove excess whitespace
-        s = s.toLowerCase();
-        s = s.replaceAll("[^a-z0-9' ]", "");
-        s = s.replaceAll("\\s+", " ");
-        s.strip();
+        formatForComparison(s);
         
         // Divide into words
         String[] sa = s.split(" ");
@@ -61,4 +60,31 @@ public class Brunner_WordCounter
     
     return dictionary;
   }
+  
+  /**
+   * Accepts a string, which can contains multiple words, and converts it to lowercase, removes non alpha-numeric numbers, and removes all unnessicary whitespace.
+   * 
+   * @param _string
+   * @return
+   * 
+   * @author Lucas Brunner
+   */
+  private static String formatForComparison(String _string)
+  {
+    _string = _string.toLowerCase();
+    _string = _string.replaceAll("[^a-z0-9' ]", "");
+    _string = _string.replaceAll("\\s+", " ");
+    _string.strip();
+    
+    return _string;
+  }
 }
+
+
+
+
+
+
+
+
+
